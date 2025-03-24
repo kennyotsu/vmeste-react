@@ -25,8 +25,7 @@ function App() {
           <div className="hero contacts_hero">
             <h1>ЧАСЫ РАБОТЫ</h1>
             <p>
-              с <b>09:00</b> до <b>23:00</b>
-              без выходных
+              с <b>09:00</b> до <b>23:00</b> без выходных
             </p>
           </div>
         </div>
@@ -55,6 +54,7 @@ function App() {
             <iframe
               className="rounded-[25px] w-full"
               src="https://yandex.ru/map-widget/v1/?um=constructor%3A24d9cb1918700782f2c8b57b53e78068f9afe91cd6329542fed59f01b812268a&amp;source=constructor"
+              width="100%"
               height="400"
               frameBorder="0"
             ></iframe>

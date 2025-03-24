@@ -25,7 +25,7 @@ function App() {
         </div>
         <div className="hero-wrapper">
           <div className="hero">
-            <div className="hero__logo">
+            <div className="hero__logo mt-20 sm:mt-0 md:mt-4">
               <img src={`${logo}`} alt="Логотип Вместе" />
             </div>
             <div className="hero__title my-2 max-w-[600px] px-4 md:px-4">

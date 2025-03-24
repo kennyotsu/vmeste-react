@@ -120,7 +120,7 @@ export const Route = createRootRoute({
                 </a>
                 <a
                   className="socials_icon menu_tg"
-                  href="https://t.me/vmesteclimb"
+                  href="https://t.me/vmesteclimbinggym"
                   target="_blank"
                 >
                   <img src={`${tgIcon}`} alt="Телеграм" />
