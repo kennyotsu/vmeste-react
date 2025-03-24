@@ -1,7 +1,7 @@
 import viteLogo from "/vite.svg";
 import { useState } from "react";
 
-import { createLazyFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import bg from "../../public/img/documents_bg.jpg";
 import docIcon from "../../public/img/document_icon.svg";
 
@@ -14,7 +14,7 @@ import doc6 from "../../public/documents/Заявление_на_допуск_н
 import doc7 from "../../public/documents/Фото_видео_съемка_взрослые.pdf";
 import doc8 from "../../public/documents/Фото_видео_съемка.pdf";
 
-export const Route = createLazyFileRoute("/documents")({
+export const Route = createFileRoute("/documents")({
   component: App,
 });
 

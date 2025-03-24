@@ -54,6 +54,7 @@ export const Route = createRootRoute({
                   className: "menu_active",
                 }}
                 onClick={() => setIsMenuOpen(false)}
+                target="_self"
               >
                 Главная
               </Link>
@@ -64,6 +65,7 @@ export const Route = createRootRoute({
                 activeProps={{
                   className: "menu_active",
                 }}
+                target="_self"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Цены
@@ -72,6 +74,7 @@ export const Route = createRootRoute({
                 className="header_menu__link menu_documents"
                 id="menu_documents"
                 to="/documents"
+                target="_self"
                 activeProps={{
                   className: "menu_active",
                 }}
@@ -83,6 +86,7 @@ export const Route = createRootRoute({
                 className="header_menu__link menu_about"
                 id="menu_about"
                 to="/about"
+                target="_self"
                 activeProps={{
                   className: "menu_active",
                 }}
@@ -94,6 +98,7 @@ export const Route = createRootRoute({
                 className="header_menu__link menu_contacts"
                 id="menu_contacts"
                 to="/contacts"
+                target="_self"
                 activeProps={{
                   className: "menu_active",
                 }}

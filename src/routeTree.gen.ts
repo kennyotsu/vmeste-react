@@ -8,51 +8,46 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createFileRoute } from '@tanstack/react-router'
-
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-
-// Create Virtual Routes
-
-const PricesLazyImport = createFileRoute('/prices')()
-const DocumentsLazyImport = createFileRoute('/documents')()
-const ContactsLazyImport = createFileRoute('/contacts')()
-const AboutLazyImport = createFileRoute('/about')()
-const IndexLazyImport = createFileRoute('/')()
+import { Route as PricesImport } from './routes/prices'
+import { Route as DocumentsImport } from './routes/documents'
+import { Route as ContactsImport } from './routes/contacts'
+import { Route as AboutImport } from './routes/about'
+import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
-const PricesLazyRoute = PricesLazyImport.update({
+const PricesRoute = PricesImport.update({
   id: '/prices',
   path: '/prices',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/prices.lazy').then((d) => d.Route))
+} as any)
 
-const DocumentsLazyRoute = DocumentsLazyImport.update({
+const DocumentsRoute = DocumentsImport.update({
   id: '/documents',
   path: '/documents',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/documents.lazy').then((d) => d.Route))
+} as any)
 
-const ContactsLazyRoute = ContactsLazyImport.update({
+const ContactsRoute = ContactsImport.update({
   id: '/contacts',
   path: '/contacts',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/contacts.lazy').then((d) => d.Route))
+} as any)
 
-const AboutLazyRoute = AboutLazyImport.update({
+const AboutRoute = AboutImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
+} as any)
 
-const IndexLazyRoute = IndexLazyImport.update({
+const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+} as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -62,35 +57,35 @@ declare module '@tanstack/react-router' {
       id: '/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexLazyImport
+      preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
     '/about': {
       id: '/about'
       path: '/about'
       fullPath: '/about'
-      preLoaderRoute: typeof AboutLazyImport
+      preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
     '/contacts': {
       id: '/contacts'
       path: '/contacts'
       fullPath: '/contacts'
-      preLoaderRoute: typeof ContactsLazyImport
+      preLoaderRoute: typeof ContactsImport
       parentRoute: typeof rootRoute
     }
     '/documents': {
       id: '/documents'
       path: '/documents'
       fullPath: '/documents'
-      preLoaderRoute: typeof DocumentsLazyImport
+      preLoaderRoute: typeof DocumentsImport
       parentRoute: typeof rootRoute
     }
     '/prices': {
       id: '/prices'
       path: '/prices'
       fullPath: '/prices'
-      preLoaderRoute: typeof PricesLazyImport
+      preLoaderRoute: typeof PricesImport
       parentRoute: typeof rootRoute
     }
   }
@@ -99,28 +94,28 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexLazyRoute
-  '/about': typeof AboutLazyRoute
-  '/contacts': typeof ContactsLazyRoute
-  '/documents': typeof DocumentsLazyRoute
-  '/prices': typeof PricesLazyRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contacts': typeof ContactsRoute
+  '/documents': typeof DocumentsRoute
+  '/prices': typeof PricesRoute
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexLazyRoute
-  '/about': typeof AboutLazyRoute
-  '/contacts': typeof ContactsLazyRoute
-  '/documents': typeof DocumentsLazyRoute
-  '/prices': typeof PricesLazyRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contacts': typeof ContactsRoute
+  '/documents': typeof DocumentsRoute
+  '/prices': typeof PricesRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
-  '/': typeof IndexLazyRoute
-  '/about': typeof AboutLazyRoute
-  '/contacts': typeof ContactsLazyRoute
-  '/documents': typeof DocumentsLazyRoute
-  '/prices': typeof PricesLazyRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contacts': typeof ContactsRoute
+  '/documents': typeof DocumentsRoute
+  '/prices': typeof PricesRoute
 }
 
 export interface FileRouteTypes {
@@ -133,19 +128,19 @@ export interface FileRouteTypes {
 }
 
 export interface RootRouteChildren {
-  IndexLazyRoute: typeof IndexLazyRoute
-  AboutLazyRoute: typeof AboutLazyRoute
-  ContactsLazyRoute: typeof ContactsLazyRoute
-  DocumentsLazyRoute: typeof DocumentsLazyRoute
-  PricesLazyRoute: typeof PricesLazyRoute
+  IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactsRoute: typeof ContactsRoute
+  DocumentsRoute: typeof DocumentsRoute
+  PricesRoute: typeof PricesRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexLazyRoute: IndexLazyRoute,
-  AboutLazyRoute: AboutLazyRoute,
-  ContactsLazyRoute: ContactsLazyRoute,
-  DocumentsLazyRoute: DocumentsLazyRoute,
-  PricesLazyRoute: PricesLazyRoute,
+  IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactsRoute: ContactsRoute,
+  DocumentsRoute: DocumentsRoute,
+  PricesRoute: PricesRoute,
 }
 
 export const routeTree = rootRoute
@@ -166,19 +161,19 @@ export const routeTree = rootRoute
       ]
     },
     "/": {
-      "filePath": "index.lazy.tsx"
+      "filePath": "index.tsx"
     },
     "/about": {
-      "filePath": "about.lazy.tsx"
+      "filePath": "about.tsx"
     },
     "/contacts": {
-      "filePath": "contacts.lazy.tsx"
+      "filePath": "contacts.tsx"
     },
     "/documents": {
-      "filePath": "documents.lazy.tsx"
+      "filePath": "documents.tsx"
     },
     "/prices": {
-      "filePath": "prices.lazy.tsx"
+      "filePath": "prices.tsx"
     }
   }
 }

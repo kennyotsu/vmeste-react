@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import { createLazyFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import Carousel from "../components/Carousel.tsx";
 
 import bg from "../../public/img/about_bg.jpg";
 
-export const Route = createLazyFileRoute("/about")({
+export const Route = createFileRoute("/about")({
   component: App,
 });
 

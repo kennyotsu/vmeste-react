@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { createLazyFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createLazyFileRoute("/contacts")({
+export const Route = createFileRoute("/contacts")({
   component: App,
 });
 

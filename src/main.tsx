@@ -16,7 +16,8 @@ const history = createHashHistory();
 const router = createRouter({
   routeTree,
   history, // Link the history instance to the router
-  basepath: "/vmeste-react", // Basepath now configured here
+  // Basepath now configured here
+  basepath: "/vmeste-react",
 });
 
 // Register router for type safety

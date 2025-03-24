@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-import { createLazyFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 import logo from "../../public/img/logo.svg";
 import square from "../../public/img/square.svg";
 import bg from "../../public/img/index_bg.jpg";
 import contentBg from "../../public/img/index-content.png";
 
-export const Route = createLazyFileRoute("/")({
+export const Route = createFileRoute("/")({
   component: App,
 });
 

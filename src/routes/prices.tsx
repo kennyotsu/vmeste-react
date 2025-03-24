@@ -1,13 +1,13 @@
 import viteLogo from "/vite.svg";
 import { useState } from "react";
 
-import { createLazyFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import price1 from "../../public/img/prices_1.png";
 import price2 from "../../public/img/prices_2.png";
 import bg from "../../public/img/prices_bg.jpg";
 
-export const Route = createLazyFileRoute("/prices")({
+export const Route = createFileRoute("/prices")({
   component: App,
 });
 
