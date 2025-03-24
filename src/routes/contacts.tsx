@@ -51,7 +51,6 @@ function App() {
           <div className="contacts_map w-full">
             {/*<img src="public/img/map.png" alt="Карта"/>*/}
             {/*<Map defaultState={{ center: [55.75, 37.57], zoom: 9 }} />*/}
-
             <iframe
               className="rounded-[25px] w-full"
               src="https://yandex.ru/map-widget/v1/?um=constructor%3A24d9cb1918700782f2c8b57b53e78068f9afe91cd6329542fed59f01b812268a&amp;source=constructor"
