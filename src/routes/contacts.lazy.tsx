@@ -1,12 +1,6 @@
-import viteLogo from "/vite.svg";
 import { useState } from "react";
-import { YMaps, Map } from "@pbe/react-yandex-maps";
 
 import { createLazyFileRoute } from "@tanstack/react-router";
-
-import reactLogo from "../public/react.svg";
-import tailwindLogo from "../public/tailwind.svg";
-import tanstackLogo from "../public/tanstack.png";
 
 export const Route = createLazyFileRoute("/contacts")({
   component: App,
