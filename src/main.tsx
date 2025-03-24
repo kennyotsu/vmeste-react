@@ -1,15 +1,25 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-
-import { createRouter, RouterProvider } from "@tanstack/react-router";
+import {
+  createHashHistory,
+  createRouter,
+  RouterProvider,
+} from "@tanstack/react-router";
 
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
-// @ts-ignore
-const router = createRouter({ routeTree });
+// Create hash-based history
+const history = createHashHistory();
 
-// Register the router instance for type safety
+// Initialize router with history and basepath
+const router = createRouter({
+  routeTree,
+  history, // Link the history instance to the router
+  basepath: "/vmeste-react", // Basepath now configured here
+});
+
+// Register router for type safety
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
@@ -18,12 +28,12 @@ declare module "@tanstack/react-router" {
 
 // Render the app
 const rootElement = document.getElementById("root")!;
+
 if (!rootElement.innerHTML) {
-  // @ts-ignore
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} basepath="/vmeste-react" />
+      <RouterProvider router={router} />
     </StrictMode>,
   );
 }
