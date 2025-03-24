@@ -114,22 +114,24 @@ function Carousel() {
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImage(null)} // Close on backdrop click
             >
-              <motion.img
-                src={selectedImage}
-                alt="Expanded view"
-                className="max-w-[90vw] max-h-[90vh] object-contain"
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.8 }}
-                transition={{ duration: 0.3 }}
-                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
-              />
-              <button
-                className="absolute top-4 right-4 text-white text-3xl"
-                onClick={() => setSelectedImage(null)}
-              >
-                &times;
-              </button>
+              <div className="relative">
+                <motion.img
+                  src={selectedImage}
+                  alt="Expanded view"
+                  className="max-w-[90vw] max-h-[90vh] object-contain"
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0.8 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
+                />
+                <button
+                  className="absolute -top-2 -right-6 text-white text-3xl z-[999]"
+                  onClick={() => setSelectedImage(null)}
+                >
+                  &times;
+                </button>
+              </div>
             </motion.div>
           )}
         </>
